@@ -76,7 +76,7 @@ const PRICE_TABLE = [
   { service: "Самонаборная печать", std: "650 р.", urgent: "—", night: "—" },
 ];
 
-const NAV_TOP = ["Главная", "Бухгалтерия", "Печати Штампы", "Регистрация ЮЛ/ИП", "Сайты/SEO", "Полиграфия"];
+const NAV_TOP = ["Главная", "Печати ИП", "Печати ЮЛ", "Штампы", "Факсимиле", "Доставка"];
 
 export default function Index() {
   const [activeCategory, setActiveCategory] = useState("ip");
@@ -102,22 +102,24 @@ export default function Index() {
               ПЕЧАТИ
             </div>
             <div className="text-xs leading-tight">
-              <div className="font-bold text-sm">ИзготовимПечать.рф</div>
-              <div className="text-blue-200">Быстро. Качественно. Недорого.</div>
+              <div className="font-bold text-sm">ПЕЧАТИ и ШТАМПЫ Калининград</div>
+              <div className="text-blue-200">Круглосуточно. Быстро. Качественно.</div>
             </div>
           </div>
           <div className="flex items-center gap-4 text-sm">
             <div className="flex items-center gap-1.5">
               <Icon name="Phone" size={14} />
-              <span className="font-bold text-base">+7 (___) ___-__-__</span>
+              <a href="tel:89527926002" className="font-bold text-base text-white hover:text-yellow-300 transition-colors">
+                8 (952) 792-60-02
+              </a>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-blue-200">
               <Icon name="MapPin" size={12} />
-              <span>г. Москва, ул. Примерная, д. 1</span>
+              <span>г. Калининград, Красносельская 82 к.2</span>
             </div>
             <div className="flex items-center gap-1.5 text-xs text-blue-200">
               <Icon name="Clock" size={12} />
-              <span>Пн–Пт 9:00–20:00, Сб 10:00–18:00</span>
+              <span>Круглосуточно, без выходных</span>
             </div>
           </div>
         </div>
@@ -412,23 +414,23 @@ export default function Index() {
                 <div className="font-bold text-sm border-b border-[#0057a8] pb-1.5 mb-2">Контакты</div>
                 <div className="flex items-center gap-2">
                   <Icon name="Phone" size={12} />
-                  <span className="font-bold">+7 (___) ___-__-__</span>
+                  <a href="tel:89527926002" className="font-bold text-white hover:text-yellow-300 transition-colors">
+                    8 (952) 792-60-02
+                  </a>
                 </div>
                 <div className="flex items-start gap-2 text-[#aac8ff]">
                   <Icon name="MapPin" size={12} className="mt-0.5 flex-shrink-0" />
-                  <span>г. Москва, ул. Примерная, д. 1, офис 1</span>
+                  <span>г. Калининград, Красносельская 82 к.2</span>
                 </div>
                 <div className="flex items-center gap-2 text-[#aac8ff]">
                   <Icon name="Clock" size={12} />
-                  <span>Пн–Пт 9:00–20:00</span>
-                </div>
-                <div className="flex items-center gap-2 text-[#aac8ff]">
-                  <Icon name="Clock" size={12} />
-                  <span>Сб 10:00–18:00</span>
+                  <span>Круглосуточно, без выходных</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="Mail" size={12} />
-                  <span>info@example.ru</span>
+                  <a href="mailto:401125@bk.ru" className="text-white hover:text-yellow-300 transition-colors">
+                    401125@bk.ru
+                  </a>
                 </div>
               </div>
             </div>
@@ -440,8 +442,8 @@ export default function Index() {
       {/* FOOTER */}
       <footer className="bg-[#003d80] text-white text-xs py-3 px-4 mt-4">
         <div className="max-w-[1100px] mx-auto flex flex-wrap justify-between items-center gap-2">
-          <span>© 2026 ИзготовимПечать.рф — Печати и штампы. Все права защищены.</span>
-          <span className="text-[#aac8ff]">+7 (___) ___-__-__ · г. Москва</span>
+          <span>© 2026 ПЕЧАТИ и ШТАМПЫ Калининград — Круглосуточно. Все права защищены.</span>
+          <span className="text-[#aac8ff]">8 (952) 792-60-02 · г. Калининград, Красносельская 82 к.2</span>
         </div>
       </footer>
 
