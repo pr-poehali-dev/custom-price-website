@@ -4,40 +4,29 @@
 
 @layer base {
   :root {
-    --background: 20 14% 7%;
-    --foreground: 40 20% 92%;
-
-    --card: 20 12% 10%;
-    --card-foreground: 40 20% 92%;
-
-    --popover: 20 12% 10%;
-    --popover-foreground: 40 20% 92%;
-
-    --primary: 43 74% 55%;
-    --primary-foreground: 20 14% 7%;
-
-    --secondary: 20 12% 14%;
-    --secondary-foreground: 40 20% 80%;
-
-    --muted: 20 12% 14%;
-    --muted-foreground: 40 10% 55%;
-
-    --accent: 43 74% 55%;
-    --accent-foreground: 20 14% 7%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 40 20% 92%;
-
-    --border: 20 12% 18%;
-    --input: 20 12% 16%;
-    --ring: 43 74% 55%;
-
-    --radius: 0.5rem;
-
-    --gold: #c9a84c;
-    --gold-light: #e2c06b;
-    --dark: #111009;
-    --dark-card: #1a1710;
+    --background: 0 0% 94%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 211 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 120 45% 35%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 80%;
+    --input: 0 0% 88%;
+    --ring: 211 100% 35%;
+    --radius: 3px;
+    --blue: #0057a8;
+    --green: #2d7a2d;
+    --red: #cc0000;
   }
 }
 
@@ -45,132 +34,129 @@
   * {
     @apply border-border;
   }
-
   html {
     scroll-behavior: smooth;
   }
-
   body {
     @apply bg-background text-foreground;
-    font-family: "Golos Text", sans-serif;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: "Montserrat", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 1.4;
   }
 }
 
 @layer utilities {
-  .gold-text {
-    color: var(--gold);
+  .stamp-thumb {
+    border: 2px solid #ccc;
+    cursor: pointer;
+    transition:
+      border-color 0.15s,
+      transform 0.15s;
+    background: #fff;
+  }
+  .stamp-thumb:hover {
+    border-color: #0057a8;
+    transform: scale(1.05);
+  }
+  .stamp-thumb.selected {
+    border-color: #cc0000;
+    box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.2);
   }
 
-  .gold-gradient {
-    background: linear-gradient(135deg, #c9a84c 0%, #e2c06b 50%, #c9a84c 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .gold-btn {
-    background: linear-gradient(135deg, #c9a84c 0%, #e2c06b 50%, #c9a84c 100%);
-    color: #111009;
-    font-weight: 700;
-    font-family: "Montserrat", sans-serif;
-    transition: all 0.3s ease;
-    background-size: 200% 200%;
-  }
-
-  .gold-btn:hover {
-    background-position: right center;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(201, 168, 76, 0.4);
-  }
-
-  .section-title::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--gold);
-    margin-top: 12px;
-  }
-
-  .section-title-center::after {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .card-hover {
-    transition: all 0.3s ease;
-  }
-
-  .card-hover:hover {
-    transform: translateY(-6px);
-    box-shadow:
-      0 20px 40px rgba(0, 0, 0, 0.4),
-      0 0 0 1px rgba(201, 168, 76, 0.2);
-  }
-
-  .noise-bg {
+  .osnastka-cell {
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color 0.15s;
     position: relative;
   }
+  .osnastka-cell:hover {
+    border-color: #0057a8;
+  }
+  .osnastka-cell.selected {
+    border-color: #cc0000;
+  }
 
-  .noise-bg::before {
-    content: "";
+  .tab-btn {
+    border: 1px solid #bbb;
+    border-bottom: none;
+    background: #e0e0e0;
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .tab-btn:hover {
+    background: #ececec;
+  }
+  .tab-btn.active {
+    background: #fff;
+    border-top: 2px solid #cc0000;
+    font-weight: bold;
+    color: #000;
+    position: relative;
+    z-index: 1;
+  }
+
+  .form-input {
+    border: 1px solid #aaa;
+    background: #fff;
+    width: 100%;
+    padding: 5px 7px;
+    font-size: 12px;
+    border-radius: 2px;
+    outline: none;
+  }
+  .form-input:focus {
+    border-color: #0057a8;
+  }
+
+  .btn-red {
+    background: #cc0000;
+    color: #fff;
+    font-weight: bold;
+    font-style: italic;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-size: 17px;
+  }
+  .btn-red:hover {
+    background: #a00000;
+  }
+
+  .btn-green {
+    background: #2d7a2d;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.15s;
+  }
+  .btn-green:hover {
+    background: #1e5a1e;
+  }
+
+  .sale-tag {
+    background: #cc0000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 2px;
     position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    opacity: 0.04;
-    z-index: 0;
+    top: 3px;
+    right: 3px;
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInUp 0.7s ease forwards;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease forwards;
-  }
-
-  .delay-100 {
-    animation-delay: 0.1s;
-  }
-  .delay-200 {
-    animation-delay: 0.2s;
-  }
-  .delay-300 {
-    animation-delay: 0.3s;
-  }
-  .delay-400 {
-    animation-delay: 0.4s;
-  }
-  .delay-500 {
-    animation-delay: 0.5s;
+  .section-header {
+    background: linear-gradient(to right, #d0e8ff, #eaf4ff);
+    border-left: 3px solid #0057a8;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #003366;
   }
 }
